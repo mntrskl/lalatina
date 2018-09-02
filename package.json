@@ -1,0 +1,28 @@
+{
+  "name": "lalatina",
+  "version": "1.0.0",
+  "description": "Discord.js Bot",
+  "main": "lalatina.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node lalatina.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/venomu/lalatina.git"
+  },
+  "author": "venomu",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/venomu/lalatina/issues"
+  },
+  "homepage": "https://github.com/venomu/lalatina#readme",
+  "dependencies": {
+    "chalk": "^2.4.1",
+    "discord.js": "^11.4.2",
+    "enmap": "^4.0.9",
+    "enmap-sqlite": "^2.0.5",
+    "moment": "^2.22.2",
+    "moment-duration-format": "^2.2.2"
+  }
+}
