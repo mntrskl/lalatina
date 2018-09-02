@@ -3,10 +3,10 @@ const config = {
     "ownerID": process.env.OWNER_ID,
   
     // Bot Admins, level 9 by default. Array of user ID strings.
-    "admins": [],
+    "admins": process.env.ADMINS,
   
     // Bot Support, level 8 by default. Array of user ID strings
-    "support": [],
+    "support": process.env.SUPPORT,
   
     // Your Bot's Token. Available on https://discordapp.com/developers/applications/me
     "token": process.env.DISCORD_TOKEN,
