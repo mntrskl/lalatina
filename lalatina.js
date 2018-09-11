@@ -7,7 +7,8 @@ if (Number(process.version.slice(1).split(".")[0]) < 8) throw new Error("Node 8.
 const Discord = require("discord.js");
 // We also load the rest of the things we need in this file:
 const { promisify } = require("util");
-const readdir = promisify(require("fs").readdir);
+// const readdir = promisify(require("fs").readdir);
+const readdir = promisify(require('recursive-readdir'));
 const Enmap = require("enmap");
 const EnmapLevel = require("enmap-sqlite");
 
@@ -45,7 +46,8 @@ const init = async () => {
 
   // Here we load **commands** into memory, as a collection, so they're accessible
   // here and everywhere else.
-  const cmdFiles = await readdir("./commands/");
+  // const cmdFiles = await readdir("./commands/");
+  const cmdFiles = await readdir('./commands/');
   client.logger.log(`Loading a total of ${cmdFiles.length} commands.`);
   cmdFiles.forEach(f => {
     if (!f.endsWith(".js")) return;
@@ -54,12 +56,12 @@ const init = async () => {
   });
 
   // Then we load events, which will include our message and ready event.
-  const evtFiles = await readdir("./events/");
+  const evtFiles = await readdir('./events/');
   client.logger.log(`Loading a total of ${evtFiles.length} events.`);
   evtFiles.forEach(file => {
     const eventName = file.split(".")[0];
     client.logger.log(`Loading Event: ${eventName}`);
-    const event = require(`./events/${file}`);
+    const event = require(`./${file}`);
     // Bind the client to any event, before the existing arguments
     // provided by the discord.js event. 
     // This line is awesome by the way. Just sayin'.
