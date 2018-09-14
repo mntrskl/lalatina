@@ -4,6 +4,7 @@ const cheerio = require('cheerio');
 exports.run = async (client, message, args, level) => {
     let embed = new RichEmbed().setColor(0xff0000).setTitle(`All Games Delta`);
     let { body } = await snek.get('api.github.com/repos/venomu/lalatina/commits/master');
+    console.log(body);
 };
 exports.conf = {
     enabled: true,
