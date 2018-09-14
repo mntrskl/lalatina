@@ -2,8 +2,6 @@
 // THIS IS PERMISSION LEVEL 10 FOR A REASON! It's perm level 10 because eval
 // can be used to do **anything** on your machine, from stealing information to
 // purging the hard drive. DO NOT LET ANYONE ELSE USE THIS
-
-
 // However it's, like, super ultra useful for troubleshooting and doing stuff
 // you don't want to put in a command.
 exports.run = async (client, message, args, level) => { // eslint-disable-line no-unused-vars
@@ -16,17 +14,15 @@ exports.run = async (client, message, args, level) => { // eslint-disable-line n
     message.channel.send(`\`ERROR\` \`\`\`xl\n${await client.clean(client, err)}\n\`\`\``);
   }
 };
-
 exports.conf = {
   enabled: true,
   guildOnly: false,
   aliases: [],
   permLevel: "Bot Owner"
 };
-
 exports.help = {
   name: "eval",
-  category: "System",
+  category: "🔒 System",
   description: "Evaluates arbitrary javascript.",
   usage: "eval [...code]"
 };
