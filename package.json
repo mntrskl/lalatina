@@ -25,6 +25,6 @@
     "enmap-sqlite": "^2.0.5",
     "moment": "^2.22.2",
     "moment-duration-format": "^2.2.2",
-    "snekfetch": "^4.0.4"
+    "node-fetch": "^2.2.0"
   }
 }
