@@ -1,11 +1,12 @@
 // This event executes when a new member joins a server. Let's welcome them!
 
 module.exports = (client, member) => {
-  // Load the guild's settings
-  const settings = client.getGuildSettings(member.guild);
+	// Load the guild's settings
+	console.log("ADDD");
+	const settings = client.getGuildSettings(member.guild);
 
-  // If welcome is off, don't proceed (don't welcome the user)
-	if (settings.welcomeEnabled === 'true') {
+	// If welcome is off, don't proceed (don't welcome the user)
+	if (settings.welcomeEnabled === "true") {
 		// Replace the placeholders in the welcome message with actual data
 		const welcomeMessage = settings.welcomeMessage.replace('{{user}}', member.user.tag);
 
@@ -15,10 +16,10 @@ module.exports = (client, member) => {
 	}
 
 	// Check if auto assinging roles is enabled
-	if (settings.newUserRoleEnabled === 'true') {
+	if (settings.newUserRoleEnabled === "true") {
 		client.logger.log(`[MEMBER JOINED] ${member.user.tag}`);
 		// Get the default role
-		var role = member.guild.roles.find('name', settings.newUserRole);
+		var role = member.guild.roles.find(x => x.name === settings.newUserRole);
 		// Assing said role
 		member.addRole(role).catch(console.error);
 	}
